@@ -26,3 +26,7 @@ Route::get('/package',[FrontPageController::class,'package'])->name('front.packa
 Route::get('/destination',[FrontPageController::class,'destination'])->name('front.destination');
 Route::get('/guide',[FrontPageController::class,'guide'])->name('front.guide');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
