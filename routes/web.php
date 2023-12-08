@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\FrontPageController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//for switching language route
+Route::get('/lang/{locale}', function ($locale) {
+	Session::put('locale', $locale);
+	return redirect()->back();
+});
+
+Route::get('/auth-test', function () {
+    return view('layouts.auth_app');
+});
 
 
 Route::get('/',[FrontPageController::class,'index'])->name('front.home');
@@ -30,3 +38,4 @@ Route::get('/guide',[FrontPageController::class,'guide'])->name('front.guide');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
