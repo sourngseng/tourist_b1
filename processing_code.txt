@@ -1,0 +1,14 @@
+ពេលរៀន ICT គឺត្រូវរៀនដល់ចំនុចនេះ
+    CRUD=Create Read Update Delete
+    Search 
+    Filter 
+៏** Service CRUD **
+    - create Service 
+    - Read Service
+    - Update Service
+    - Delete Service
+
+    1-ចូលទៅកាន់ Model(app/Models/Service) ហើយសរសរកូដខាងក្រោម៖
+        protected $fillable = ['title', 'description', 'image','status'];
+    2-ចូលទៅកាន់ Controller(app/Http/Controller/ServiceController) ហើយត្រូវសរសេរកូដតាម Function របស់វា៖
+        1-create
